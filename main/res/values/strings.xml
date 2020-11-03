@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simba CarDemo</string>
+    <string name="make">Make</string>
+    <string name="filter">Filter</string>
+</resources>

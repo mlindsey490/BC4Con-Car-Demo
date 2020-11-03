@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools" package="com.example.stevenperegrine.simba_cardemo">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:name="android.hardware.camera"
+                  android:required="true" />
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".GetActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".MainActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".PostActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".MainActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".DetailActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".GetActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".GetActivity" />
+        </activity>
+
+        <activity android:name=".WalletMenuActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".MainActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".CreateWalletActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".WalletMenuActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".WalletMenuActivity" />
+        </activity>
+
+        <activity android:name=".ImportWalletActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".WalletMenuActivity">
+            <!-- The meta-getData tag is required if you support API level 15 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".WalletMenuActivity" />
+        </activity>
+
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="com.example.android.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+    </application>
+
+</manifest>
